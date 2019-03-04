@@ -10,3 +10,4 @@
 
   roles:
     - roles/common
+    - roles/apache

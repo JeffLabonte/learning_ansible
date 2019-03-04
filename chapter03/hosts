@@ -1,0 +1,22 @@
+ansible01 ansible_host=159.89.124.2
+ansible02 ansible_host=159.89.121.119
+ansible03 ansible_host=159.89.123.246
+ansible04 ansible_host=159.89.119.119
+
+[toronto]
+ansible01
+ansible02
+
+[toronto2]
+ansible03
+ansible04
+
+[digitalocean:children]
+toronto
+toronto2
+
+[digitalocean:vars]
+ansible_connection=ssh
+ansible_user=root
+ansible_private_key=~/.ssh/id_rsa
+host_key_checking=False

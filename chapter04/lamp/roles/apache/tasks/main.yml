@@ -3,9 +3,8 @@
 
 - name: install the apache packages
   yum:
-    name: "{{ item }}"
+    name: "{{ apache_packages }}"
     state: "installed"
-  with_items: "{{ apache_packages }}"
 
 - name: add user to apache group
   user:

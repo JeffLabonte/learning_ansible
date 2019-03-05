@@ -11,3 +11,4 @@
   roles:
     - roles/common
     - roles/apache
+    - roles/mariadb

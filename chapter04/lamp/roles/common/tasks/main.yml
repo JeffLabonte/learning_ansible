@@ -8,9 +8,8 @@
 
 - name: install the common packages
   yum:
-    name: "{{ item }}"
+    name: "{{ common_packages }}"
     state: "installed"
-  with_items: "{{ common_packages }}"
 
 - name: copy the ntp.conf to /etc/ntp.conf
   template:

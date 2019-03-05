@@ -12,3 +12,4 @@
     - roles/common
     - roles/apache
     - roles/mariadb
+    - roles/php

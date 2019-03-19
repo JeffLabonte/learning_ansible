@@ -3,7 +3,7 @@
 
 API_VERSION = "2"
 BOX_NAME = "centos/7"
-BOX_IP = "192.168.50.4"
+BOX_IP = "192.168.50.5"
 DOMAIN = "nip.io"
 PRIVATE_KEY = "id_rsa"
 PUBLIC_KEY = "id_rsa.pub"

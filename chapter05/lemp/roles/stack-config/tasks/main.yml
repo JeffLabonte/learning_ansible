@@ -15,3 +15,20 @@
     dest: "/etc/nginx/nginx.conf"
   notify: "restart nginx"
 
+- name: create the global directory in /etc/nginx
+  file:
+    dest: "/etc/nginx/global"
+    state: "present"
+    mode: "0644"
+
+- name: copy the restrictions.conf to /etc/nginx/global/
+  copy:
+    src: "nginx.global-restrictions.conf"
+    dest: "/etc/nginx/global/restrictions.conf"
+  notify: "restart nginx"
+
+- name: copy the wordpress_shared.conf to /etc/nginx/global
+  template:
+    src: "nginx-global-wrodpress_shared.conf.j2"
+    dest: "/etc/nginx/global/wordpress_shared.conf"
+  notify: "restart nginx"

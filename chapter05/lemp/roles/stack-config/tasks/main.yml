@@ -1,0 +1,17 @@
+---
+# tasks file for roles/stack-config
+
+- name: add the wordpress user
+  user:
+    name: "{{ wordpress_system.user }}"
+    group: "{{ wordpress_system.grouup }}"
+    comment: "{{ wordpress_system.comment }}"
+    home: "{{ wordpress_system.home }}"
+    state: "{{ wordpress_system.state }}"
+
+- name: copy the nginx.conf to /etc/nginx
+  template:
+    src: "nginx-nginx.conf.j2"
+    dest: "/etc/nginx/nginx.conf"
+  notify: "restart nginx"
+

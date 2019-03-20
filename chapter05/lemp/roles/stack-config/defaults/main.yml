@@ -1,0 +1,9 @@
+---
+# defaults file for roles/stack-config
+
+wordpress_system:
+  user: "wordpress"
+  group: "php-fpm"
+  comment: "wordpress system user"
+  home: "/var/www/wordpress"
+  state: "present"
